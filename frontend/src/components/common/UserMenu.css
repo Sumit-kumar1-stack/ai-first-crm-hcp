@@ -1,0 +1,39 @@
+.user-menu{
+
+position:absolute;
+
+top:70px;
+
+right:0;
+
+width:220px;
+
+background:white;
+
+border-radius:16px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+overflow:hidden;
+
+z-index:999;
+
+}
+
+.user-menu div{
+
+padding:16px 20px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.user-menu div:hover{
+
+background:#2563eb;
+
+color:white;
+
+}

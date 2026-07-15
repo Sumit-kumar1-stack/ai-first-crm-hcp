@@ -1,0 +1,120 @@
+/* ===========================
+   CRM INSIGHTS PANEL
+=========================== */
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===========================
+   DASHBOARD METRICS
+=========================== */
+
+.metric-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid #2563eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: 0.25s;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+}
+
+.metric-card span {
+  font-size: 15px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.metric-card strong {
+  font-size: 22px;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ===========================
+   AI INSIGHT CARDS
+=========================== */
+
+.insight-card {
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.insight-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.insight-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* ===========================
+   DIFFERENT COLORS
+=========================== */
+
+.insight-card:nth-of-type(8) {
+  border-left-color: #2563eb;
+}
+
+.insight-card:nth-of-type(9) {
+  border-left-color: #16a34a;
+}
+
+.insight-card:nth-of-type(10) {
+  border-left-color: #ea580c;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .metric-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .metric-card strong {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+}

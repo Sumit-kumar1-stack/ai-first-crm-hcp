@@ -1,0 +1,180 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 000002BB 5EA0:A153
+C:\USERS\SUMIT\AI-FIRST-CRM-HCP\BACKEND\APP
+¦   config.py
+¦   dependencies.py
+¦   main.py
+¦   __init__.py
+¦   
++---api
+¦   ¦   agent.py
+¦   ¦   interactions.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           agent.cpython-312.pyc
+¦           interactions.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---auth
+¦   ¦   dependencies.py
+¦   ¦   jwt.py
+¦   ¦   password.py
+¦   ¦   router.py
+¦   ¦   schemas.py
+¦   ¦   security.py
+¦   ¦   service.py
+¦   ¦   
+¦   +---__pycache__
+¦           dependencies.cpython-312.pyc
+¦           jwt.cpython-312.pyc
+¦           password.cpython-312.pyc
+¦           router.cpython-312.pyc
+¦           schemas.cpython-312.pyc
+¦           security.cpython-312.pyc
+¦           service.cpython-312.pyc
+¦           
++---crud
+¦   ¦   interaction.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           interaction.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---db
+¦   ¦   database.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           database.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---graph
+¦   ¦   graph.py
+¦   ¦   nodes.py
+¦   ¦   router.py
+¦   ¦   state.py
+¦   ¦   tools.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           graph.cpython-312.pyc
+¦           nodes.cpython-312.pyc
+¦           router.cpython-312.pyc
+¦           state.cpython-312.pyc
+¦           tools.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---models
+¦   ¦   interaction.py
+¦   ¦   user.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           interaction.cpython-312.pyc
+¦           user.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---prompts
+¦   ¦   edit_prompt.py
+¦   ¦   extraction_prompt.py
+¦   ¦   followup_prompt.py
+¦   ¦   intent_prompt.py
+¦   ¦   search_prompt.py
+¦   ¦   summary_prompt.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           edit_prompt.cpython-312.pyc
+¦           extraction_prompt.cpython-312.pyc
+¦           followup_prompt.cpython-312.pyc
+¦           intent_prompt.cpython-312.pyc
+¦           search_prompt.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---repositories
+¦   ¦   analytics_repository.py
+¦   ¦   auth_repository.py
+¦   ¦   interaction_repository.py
+¦   ¦   user_repository.py
+¦   ¦   
+¦   +---__pycache__
+¦           analytics_repository.cpython-312.pyc
+¦           auth_repository.cpython-312.pyc
+¦           interaction_repository.cpython-312.pyc
+¦           user_repository.cpython-312.pyc
+¦           
++---routers
+¦   ¦   interaction.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           interaction.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---routes
+¦   ¦   analytics.py
+¦   ¦   auth.py
+¦   ¦   interactions.py
+¦   ¦   
+¦   +---__pycache__
+¦           analytics.cpython-312.pyc
+¦           auth.cpython-312.pyc
+¦           
++---schemas
+¦   ¦   agent.py
+¦   ¦   auth_schema.py
+¦   ¦   edit.py
+¦   ¦   followup.py
+¦   ¦   interaction.py
+¦   ¦   interaction_ai.py
+¦   ¦   search.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           agent.cpython-312.pyc
+¦           auth_schema.cpython-312.pyc
+¦           edit.cpython-312.pyc
+¦           followup.cpython-312.pyc
+¦           interaction.cpython-312.pyc
+¦           interaction_ai.cpython-312.pyc
+¦           search.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---scripts
+¦       create_admin.py
+¦       
++---services
+¦   ¦   ai_service.py
+¦   ¦   analytics_service.py
+¦   ¦   auth_service.py
+¦   ¦   edit_service.py
+¦   ¦   extraction_service.py
+¦   ¦   followup_service.py
+¦   ¦   gemini_service.py
+¦   ¦   groq_service.py
+¦   ¦   llm.py
+¦   ¦   search_service.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           ai_service.cpython-312.pyc
+¦           analytics_service.cpython-312.pyc
+¦           auth_service.cpython-312.pyc
+¦           edit_service.cpython-312.pyc
+¦           extraction_service.cpython-312.pyc
+¦           followup_service.cpython-312.pyc
+¦           gemini_service.cpython-312.pyc
+¦           llm.cpython-312.pyc
+¦           search_service.cpython-312.pyc
+¦           __init__.cpython-312.pyc
+¦           
++---utils
+¦       __init__.py
+¦       
++---__pycache__
+        config.cpython-312.pyc
+        main.cpython-312.pyc
+        __init__.cpython-312.pyc
+        

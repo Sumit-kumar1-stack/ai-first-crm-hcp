@@ -1,0 +1,47 @@
+.card{
+
+background:white;
+
+border-radius:20px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow-sm);
+
+transition:var(--transition);
+
+}
+
+.card:hover{
+
+box-shadow:var(--shadow-md);
+
+}
+
+.card-header{
+
+padding:20px 24px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.card-header h3{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.card-body{
+
+padding:24px;
+
+}

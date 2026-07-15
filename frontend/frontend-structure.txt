@@ -1,0 +1,160 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 00000226 5EA0:A153
+C:\USERS\SUMIT\AI-FIRST-CRM-HCP\FRONTEND\SRC
+¦   App.css
+¦   App.jsx
+¦   index.css
+¦   main.jsx
+¦   
++---assets
+¦       hero.png
+¦       react.svg
+¦       vite.svg
+¦       
++---components
+¦   +---ai
+¦   ¦       ChatInput.css
+¦   ¦       ChatInput.jsx
+¦   ¦       ChatSidebar.css
+¦   ¦       ChatSidebar.jsx
+¦   ¦       ChatWindow.css
+¦   ¦       ChatWindow.jsx
+¦   ¦       EmptyState.css
+¦   ¦       EmptyState.jsx
+¦   ¦       FilePreview.css
+¦   ¦       FilePreview.jsx
+¦   ¦       MessageBubble.css
+¦   ¦       MessageBubble.jsx
+¦   ¦       PromptSuggestions.css
+¦   ¦       PromptSuggestions.jsx
+¦   ¦       StreamingMessage.css
+¦   ¦       StreamingMessage.jsx
+¦   ¦       TypingIndicator.css
+¦   ¦       TypingIndicator.jsx
+¦   ¦       VoiceButton.css
+¦   ¦       VoiceButton.jsx
+¦   ¦       
+¦   +---auth
+¦   ¦       LoginForm.css
+¦   ¦       LoginForm.jsx
+¦   ¦       
+¦   +---chat
+¦   ¦       Chat.css
+¦   ¦       ChatBox.jsx
+¦   ¦       ChatInput.jsx
+¦   ¦       ChatMessage.jsx
+¦   ¦       ChatPanel.css
+¦   ¦       ChatPanel.jsx
+¦   ¦       
+¦   +---common
+¦   ¦   ¦   NotificationDropdown.css
+¦   ¦   ¦   NotificationDropdown.jsx
+¦   ¦   ¦   SearchBar.css
+¦   ¦   ¦   SearchBar.jsx
+¦   ¦   ¦   UserMenu.css
+¦   ¦   ¦   UserMenu.jsx
+¦   ¦   ¦   
+¦   ¦   +---Button
+¦   ¦   ¦       Button.css
+¦   ¦   ¦       Button.jsx
+¦   ¦   ¦       
+¦   ¦   +---Card
+¦   ¦           Card.css
+¦   ¦           Card.jsx
+¦   ¦           
+¦   +---dashboard
+¦   ¦       ActivityFeed.css
+¦   ¦       ActivityFeed.jsx
+¦   ¦       ActivityTimeline.css
+¦   ¦       ActivityTimeline.jsx
+¦   ¦       ChartsPanel.css
+¦   ¦       ChartsPanel.jsx
+¦   ¦       DoctorTable.css
+¦   ¦       DoctorTable.jsx
+¦   ¦       FollowupWidget.css
+¦   ¦       FollowupWidget.jsx
+¦   ¦       InsightCard.css
+¦   ¦       InsightCard.jsx
+¦   ¦       MetricCard.css
+¦   ¦       MetricCard.jsx
+¦   ¦       PerformanceCard.css
+¦   ¦       PerformanceCard.jsx
+¦   ¦       QuickActions.css
+¦   ¦       QuickActions.jsx
+¦   ¦       RecentActivity.css
+¦   ¦       RecentActivity.jsx
+¦   ¦       StatsGrid.css
+¦   ¦       StatsGrid.jsx
+¦   ¦       
+¦   +---histroy
+¦   ¦       DeleteModal.css
+¦   ¦       DeleteModal.jsx
+¦   ¦       HistoryPanel.css
+¦   ¦       HistoryPanel.jsx
+¦   ¦       InteractionModal.css
+¦   ¦       InteractionModal.jsx
+¦   ¦       
+¦   +---insight
+¦   ¦       InsightPanel.css
+¦   ¦       InsightPanel.jsx
+¦   ¦       
+¦   +---interaction
+¦   ¦       InteractionCard.jsx
+¦   ¦       InteractionForm.css
+¦   ¦       InteractionForm.jsx
+¦   ¦       
+¦   +---layout
+¦           Header.css
+¦           Header.jsx
+¦           Layout.css
+¦           Layout.jsx
+¦           Navbar.jsx
+¦           Sidebar.css
+¦           Sidebar.jsx
+¦           
++---hooks
+¦       useChat.js
+¦       
++---pages
+¦       AIWorkspace.css
+¦       AIWorkspace.jsx
+¦       Analytics.jsx
+¦       Dashboard.css
+¦       Dashboard.jsx
+¦       Doctors.jsx
+¦       Login.jsx
+¦       NotFound.jsx
+¦       Reports.jsx
+¦       Settings.jsx
+¦       
++---redux
+¦       authSlice.js
+¦       dashboardSlice.js
+¦       doctorSlice.js
+¦       interactionSlice.js
+¦       store.js
+¦       
++---routes
+¦       AppRoutes.jsx
+¦       ProtectedRoute.jsx
+¦       
++---services
+¦       analyticsApi.js
+¦       api.js
+¦       authApi.js
+¦       dashboardApi.js
+¦       interactionApi.js
+¦       
++---styles
+¦       global.css
+¦       layout.css
+¦       theme.css
+¦       variables.css
+¦       
++---utils
+        constants.js
+        date.js
+        helpers.js
+        token.js
+        validators.js
+        

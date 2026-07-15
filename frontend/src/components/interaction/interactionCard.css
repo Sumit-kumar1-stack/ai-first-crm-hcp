@@ -1,0 +1,43 @@
+.interaction-info-card{
+
+background:white;
+
+border-radius:16px;
+
+padding:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.interaction-header{
+
+margin-bottom:18px;
+
+}
+
+.interaction-row{
+
+display:flex;
+
+gap:12px;
+
+margin-bottom:18px;
+
+align-items:flex-start;
+
+}
+
+.interaction-row small{
+
+color:#64748b;
+
+}
+
+.interaction-row p{
+
+margin-top:4px;
+
+font-weight:600;
+
+}

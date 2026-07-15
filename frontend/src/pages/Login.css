@@ -1,0 +1,42 @@
+.login-page{
+display:flex;
+height:100vh;
+background:#f5f7fb;
+}
+
+.login-left{
+flex:1;
+background:linear-gradient(135deg,#2563eb,#1e3a8a);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+padding:60px;
+}
+
+.overlay{
+max-width:500px;
+}
+
+.overlay h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.overlay p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.overlay ul{
+padding-left:20px;
+line-height:2;
+font-size:18px;
+}
+
+.login-right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
