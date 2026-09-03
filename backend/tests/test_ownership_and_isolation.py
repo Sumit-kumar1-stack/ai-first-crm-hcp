@@ -133,7 +133,7 @@ def test_user_a_creates_interaction(client, token_a, user_a):
         "follow_up": "Next Monday",
     }
     response = client.post(
-        "/interactions/",
+        "/api/interactions/",
         json=payload,
         headers={"Authorization": f"Bearer {token_a}"},
     )
@@ -146,7 +146,7 @@ def test_user_a_creates_interaction(client, token_a, user_a):
 def test_user_b_cannot_list_user_a_interaction(client, token_a, token_b, user_a, user_b):
     # User A creates an interaction
     client.post(
-        "/interactions/",
+        "/api/interactions/",
         json={
             "doctor_name": "Dr. Alpha Exclusive",
             "hospital": "Alpha Clinic",
@@ -161,7 +161,7 @@ def test_user_b_cannot_list_user_a_interaction(client, token_a, token_b, user_a,
 
     # User B lists interactions
     response_b = client.get(
-        "/interactions/",
+        "/api/interactions/",
         headers={"Authorization": f"Bearer {token_b}"},
     )
     assert response_b.status_code == 200
@@ -175,7 +175,7 @@ def test_user_b_cannot_list_user_a_interaction(client, token_a, token_b, user_a,
 def test_user_b_cannot_update_user_a_interaction(client, token_a, token_b):
     # User A creates an interaction
     res_a = client.post(
-        "/interactions/",
+        "/api/interactions/",
         json={
             "doctor_name": "Dr. Target",
             "hospital": "Main Hospital",
@@ -191,7 +191,7 @@ def test_user_b_cannot_update_user_a_interaction(client, token_a, token_b):
 
     # User B tries to update User A's interaction
     res_b = client.put(
-        f"/interactions/{interaction_id}",
+        f"/api/interactions/{interaction_id}",
         json={"doctor_name": "Hacked Dr."},
         headers={"Authorization": f"Bearer {token_b}"},
     )
@@ -201,7 +201,7 @@ def test_user_b_cannot_update_user_a_interaction(client, token_a, token_b):
 def test_user_b_cannot_delete_user_a_interaction(client, token_a, token_b):
     # User A creates an interaction
     res_a = client.post(
-        "/interactions/",
+        "/api/interactions/",
         json={
             "doctor_name": "Dr. Permanent",
             "hospital": "General Hospital",
@@ -217,7 +217,7 @@ def test_user_b_cannot_delete_user_a_interaction(client, token_a, token_b):
 
     # User B attempts to delete
     res_b = client.delete(
-        f"/interactions/{interaction_id}",
+        f"/api/interactions/{interaction_id}",
         headers={"Authorization": f"Bearer {token_b}"},
     )
     assert res_b.status_code == 404
@@ -226,7 +226,7 @@ def test_user_b_cannot_delete_user_a_interaction(client, token_a, token_b):
 def test_analytics_for_user_b_excludes_user_a(client, token_a, token_b):
     # User A creates an interaction
     client.post(
-        "/interactions/",
+        "/api/interactions/",
         json={
             "doctor_name": "Dr. Unique To Alpha",
             "hospital": "Alpha Hospital",
@@ -241,7 +241,7 @@ def test_analytics_for_user_b_excludes_user_a(client, token_a, token_b):
 
     # User B requests dashboard analytics
     response = client.get(
-        "/analytics/dashboard",
+        "/api/analytics/dashboard",
         headers={"Authorization": f"Bearer {token_b}"},
     )
     assert response.status_code == 200
@@ -253,7 +253,7 @@ def test_analytics_for_user_b_excludes_user_a(client, token_a, token_b):
 
 def test_inactive_user_token_is_rejected(client, token_inactive):
     response = client.get(
-        "/interactions/",
+        "/api/interactions/",
         headers={"Authorization": f"Bearer {token_inactive}"},
     )
     assert response.status_code == 403

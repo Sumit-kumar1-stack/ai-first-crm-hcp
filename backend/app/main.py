@@ -54,13 +54,13 @@ app.add_middleware(
 # Routers
 # =====================================
 
-app.include_router(auth_router)
+app.include_router(auth_router, prefix="/api")
 
-app.include_router(agent_router)
+app.include_router(agent_router, prefix="/api")
 
-app.include_router(interaction_router)
+app.include_router(interaction_router, prefix="/api")
 
-app.include_router(analytics_router)
+app.include_router(analytics_router, prefix="/api")
 
 
 # =====================================
