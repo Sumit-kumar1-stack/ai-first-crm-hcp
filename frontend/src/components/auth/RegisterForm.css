@@ -59,6 +59,11 @@
     background:#1d4ed8;
 }
 
+.register-card button:disabled{
+    background:#93c5fd;
+    cursor:not-allowed;
+}
+
 .login-link{
     text-align:center;
     color:#2563eb;

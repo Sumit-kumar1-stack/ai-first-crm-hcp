@@ -93,3 +93,27 @@ color:red;
 font-size:14px;
 
 }
+
+.login-card button:disabled{
+background:#93c5fd;
+cursor:not-allowed;
+}
+
+.login-footer{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:6px;
+font-size:14px;
+color:#666;
+}
+
+.register-link{
+color:#2563eb;
+text-decoration:none;
+font-weight:600;
+}
+
+.register-link:hover{
+text-decoration:underline;
+}

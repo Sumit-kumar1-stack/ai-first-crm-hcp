@@ -2,11 +2,13 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.db.database import get_db
+from app.auth.dependencies import get_current_user
 from app.repositories.analytics_repository import AnalyticsRepository
 
 router = APIRouter(
     prefix="/analytics",
     tags=["Analytics"],
+    dependencies=[Depends(get_current_user)],
 )
 
 

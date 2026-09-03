@@ -10,7 +10,11 @@ from app.schemas.auth_schema import (
 
     RegisterRequest,
 
+    RegisterResponse,
+
     LoginRequest,
+
+    TokenResponse,
 
 )
 
@@ -31,7 +35,7 @@ router = APIRouter(
 )
 
 
-@router.post("/register")
+@router.post("/register", response_model=RegisterResponse)
 
 def register(
 
@@ -50,7 +54,7 @@ def register(
     )
 
 
-@router.post("/login")
+@router.post("/login", response_model=TokenResponse)
 
 def login(
 

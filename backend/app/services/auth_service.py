@@ -58,7 +58,7 @@ class AuthService:
 
             ),
 
-            role=request.role,
+            role="MR",
 
         )
 
@@ -110,6 +110,16 @@ class AuthService:
                 status_code=401,
 
                 detail="Invalid email or password",
+
+            )
+
+        if not user.is_active:
+
+            raise HTTPException(
+
+                status_code=403,
+
+                detail="User account is inactive",
 
             )
 

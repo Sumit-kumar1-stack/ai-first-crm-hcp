@@ -20,7 +20,9 @@ login
 
 import {
 
-useNavigate
+useNavigate,
+
+Link
 
 } from "react-router-dom";
 
@@ -118,6 +120,8 @@ e.target.value
 
 }
 
+required
+
 />
 
 <input
@@ -138,6 +142,8 @@ e.target.value
 
 }
 
+required
+
 />
 
 {error &&
@@ -151,6 +157,8 @@ e.target.value
 }
 
 <button
+
+type="submit"
 
 disabled={loading}
 
@@ -171,6 +179,18 @@ loading
 }
 
 </button>
+
+<div className="login-footer">
+
+<span>Don't have an account? </span>
+
+<Link to="/register" className="register-link">
+
+Create account
+
+</Link>
+
+</div>
 
 </form>
 

@@ -4,6 +4,7 @@ from sqlalchemy import or_
 
 
 from app.db.database import get_db
+from app.auth.dependencies import get_current_user
 from app.models.interaction import Interaction
 from app.schemas.interaction import (
     InteractionCreate,
@@ -14,6 +15,7 @@ from app.schemas.interaction import (
 router = APIRouter(
     prefix="/interactions",
     tags=["Interactions"],
+    dependencies=[Depends(get_current_user)],
 )
 
 
