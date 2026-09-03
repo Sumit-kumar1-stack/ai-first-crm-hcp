@@ -1,26 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setEntities } from "../../redux/interactionFormSlice";
 
 export default function FormStatusBridge() {
-
   const dispatch = useDispatch();
 
   const messages = useSelector(
     (state) => state.interaction.messages
   );
 
-  useEffect(() => {
+  const lastProcessedRef = useRef(null);
 
+  useEffect(() => {
     const latest = messages
-      .filter((m) => m.type === "assistant")
+      .filter((m) => m.type === "assistant" && m.data)
       .at(-1);
 
-    if (!latest?.data) return;
+    if (!latest || !latest.data) return;
+    if (lastProcessedRef.current === latest) return;
+    lastProcessedRef.current = latest;
 
     dispatch(
       setEntities({
-
         doctor:
           latest.data.doctor_name || "",
 
@@ -44,12 +45,9 @@ export default function FormStatusBridge() {
 
         follow_up:
           latest.data.follow_up || "",
-
       })
     );
-
   }, [messages, dispatch]);
 
   return null;
-
 }

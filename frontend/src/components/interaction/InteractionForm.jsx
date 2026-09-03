@@ -73,9 +73,15 @@ export default function InteractionForm() {
                 <div className="ai-status">
 
                     <span>
-
-                        ✓ AI Extracted
-
+                        {form.saved
+                            ? "✓ Saved"
+                            : form.approved
+                            ? "✓ Approved"
+                            : form.rejected
+                            ? "✕ Rejected"
+                            : form.doctor || form.notes
+                            ? "Pending Review"
+                            : "✓ AI Ready"}
                     </span>
 
                     <ConfidenceBadge

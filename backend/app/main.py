@@ -13,11 +13,12 @@ from app.routes.analytics import router as analytics_router
 from app.routes.auth import router as auth_router
 
 
-# =====================================
-# Create Database Tables
-# =====================================
+import os
 
-Base.metadata.create_all(bind=engine)
+# Create Database Tables automatically in development only if explicitly enabled.
+# Production uses Alembic migrations as the authoritative schema management mechanism.
+if os.getenv("AUTO_CREATE_TABLES", "false").lower() in ("true", "1"):
+    Base.metadata.create_all(bind=engine)
 
 
 # =====================================

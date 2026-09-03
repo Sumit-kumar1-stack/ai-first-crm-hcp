@@ -25,6 +25,7 @@ class InteractionUpdate(BaseModel):
 
 class InteractionResponse(InteractionCreate):
     id: int
+    user_id: int | None = None
     summary: str
     outcome: str
 

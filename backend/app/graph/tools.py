@@ -8,7 +8,6 @@ from app.repositories.interaction_repository import (
     InteractionRepository,
 )
 
-
 # =====================================================
 # LOG TOOL
 # =====================================================
@@ -19,56 +18,44 @@ def log_tool(state):
         state["user_input"]
     )
 
-    saved = InteractionRepository.create(
-        state["db"],
-        interaction,
-    )
-
     recommendation = FollowupService.generate(
         interaction.summary
     )
 
+    products_str = (
+        ", ".join(interaction.products)
+        if isinstance(interaction.products, list)
+        else (interaction.products or "")
+    )
+
     state["extracted_data"] = {
-
-        "doctor": saved.doctor_name,
-
-        "hospital": saved.hospital,
-
+        "doctor": interaction.doctor_name,
+        "hospital": interaction.hospital,
         "specialization": interaction.specialization,
-
-        "product": saved.products,
-
-        "follow_up": saved.follow_up,
-
+        "product": products_str,
+        "follow_up": interaction.follow_up,
         "notes": interaction.discussion,
-
     }
 
-    state["summary"] = saved.summary
+    state["summary"] = interaction.summary
 
     state["recommendations"] = recommendation.model_dump()
 
     state["confidence"] = 0.95
 
     state["result"] = {
-
-        "id": saved.id,
-
-        "doctor_name": saved.doctor_name,
-
-        "hospital": saved.hospital,
-
-        "products": saved.products,
-
-        "summary": saved.summary,
-
-        "follow_up": saved.follow_up,
-
-        "outcome": saved.outcome,
-
+        "doctor_name": interaction.doctor_name,
+        "hospital": interaction.hospital,
+        "specialization": interaction.specialization,
+        "meeting_date": interaction.meeting_date,
+        "products": products_str,
+        "discussion": interaction.discussion,
+        "summary": interaction.summary,
+        "follow_up": interaction.follow_up,
+        "outcome": interaction.outcome,
     }
 
-    state["response"] = "Interaction logged successfully."
+    state["response"] = "Interaction details extracted. Ready for review."
 
     return state
 
@@ -94,41 +81,26 @@ def edit_tool(state):
         return state
 
     interaction = InteractionRepository.update(
-
         state["db"],
-
         update.interaction_id,
-
         update.field,
-
         update.new_value,
-
+        user_id=state.get("user_id"),
     )
 
     if not interaction:
-
         state["result"] = None
-
         state["response"] = "Interaction not found."
-
         return state
 
     state["result"] = {
-
         "id": interaction.id,
-
         "doctor_name": interaction.doctor_name,
-
         "hospital": interaction.hospital,
-
         "products": interaction.products,
-
         "summary": interaction.summary,
-
         "follow_up": interaction.follow_up,
-
         "outcome": interaction.outcome,
-
     }
 
     state["response"] = "Interaction updated successfully."
@@ -147,35 +119,22 @@ def search_tool(state):
     )
 
     records = InteractionRepository.search_by_doctor(
-
         state["db"],
-
         search.doctor_name,
-
+        user_id=state.get("user_id"),
     )
 
     state["result"] = [
-
         {
-
             "id": r.id,
-
             "doctor_name": r.doctor_name,
-
             "hospital": r.hospital,
-
             "products": r.products,
-
             "summary": r.summary,
-
             "follow_up": r.follow_up,
-
             "outcome": r.outcome,
-
         }
-
         for r in records
-
     ]
 
     state["response"] = f"{len(records)} interaction(s) found."
@@ -202,9 +161,7 @@ Return only the summary.
     summary = AIService.invoke(prompt)
 
     state["result"] = {
-
         "summary": summary,
-
     }
 
     state["summary"] = summary
@@ -225,11 +182,9 @@ def followup_tool(state):
     )
 
     history = InteractionRepository.get_history(
-
         state["db"],
-
         doctor.doctor_name,
-
+        user_id=state.get("user_id"),
     )
 
     recommendation = FollowupService.generate(

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {
   LayoutDashboard,
@@ -52,6 +53,14 @@ const menus = [
 ];
 
 export default function Sidebar() {
+  const user = useSelector((state) => state.auth.user);
+  const displayName = user?.name || "User";
+  const roleName =
+    user?.role === "MR"
+      ? "Medical Representative"
+      : user?.role || "Team Member";
+  const avatarLetter = (displayName[0] || "U").toUpperCase();
+
   return (
     <aside className="sidebar">
       <div>
@@ -91,13 +100,13 @@ export default function Sidebar() {
 
       <div className="sidebar-user">
         <div className="avatar">
-          S
+          {avatarLetter}
         </div>
 
         <div>
-          <strong>Sumit Kumar</strong>
+          <strong>{displayName}</strong>
 
-          <p>Medical Representative</p>
+          <p>{roleName}</p>
         </div>
       </div>
     </aside>

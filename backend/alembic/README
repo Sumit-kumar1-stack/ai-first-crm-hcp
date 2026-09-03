@@ -1,0 +1,39 @@
+# Database Migrations (Alembic)
+
+## Fresh Database (e.g. Production PostgreSQL or Clean Development DB)
+
+Run all migrations from base to head:
+
+```bash
+alembic upgrade head
+```
+
+This runs:
+1. `0001_initial_schema`: Creates baseline `users` and `interactions` tables.
+2. `0002_add_user_id`: Enforces `interactions.user_id` as `INTEGER NOT NULL`, Foreign Key to `users.id` (`ON DELETE CASCADE`), and creates index on `user_id`.
+
+## Existing Pre-Alembic Database
+
+**Do not run `alembic upgrade head` directly if `users` or `interactions` tables already exist.**
+
+If your local SQLite database is disposable:
+1. Back up the existing database file if needed:
+   ```bash
+   cp ai_crm.db ai_crm.db.backup
+   ```
+2. Remove or reset the disposable database.
+3. Run Alembic migrations from scratch:
+   ```bash
+   alembic upgrade head
+   ```
+
+If legacy data must be retained:
+1. Determine deterministic, legitimate ownership for existing unowned interaction records.
+2. Backfill `user_id` on all existing records.
+3. Establish the correct Alembic baseline revision:
+   ```bash
+   alembic stamp 0001_initial_schema
+   ```
+4. Run `alembic upgrade head` to apply the `NOT NULL` constraint, index, and foreign key.
+
+*Note: Old records must never be assigned to an arbitrary user or given fake ownership.*

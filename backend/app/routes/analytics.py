@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.database import get_db
 from app.auth.dependencies import get_current_user
+from app.models.user import User
 from app.repositories.analytics_repository import AnalyticsRepository
 
 router = APIRouter(
@@ -15,8 +16,9 @@ router = APIRouter(
 @router.get("/dashboard")
 def dashboard(
     db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
 ):
-
     return AnalyticsRepository.get_dashboard_stats(
-        db
+        db,
+        user_id=current_user.id,
     )

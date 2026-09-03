@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import StatsGrid from "../components/dashboard/StatsGrid";
 import ChartsPanel from "../components/dashboard/ChartsPanel";
@@ -14,90 +14,48 @@ import FollowupWidget from "../components/dashboard/FollowupWidget";
 import { fetchDashboardStats } from "../redux/dashboardSlice";
 import { fetchHistory } from "../redux/interactionSlice";
 
+export default function Dashboard() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const displayName = user?.name || "User";
 
-export default function Dashboard(){
+  useEffect(() => {
+    dispatch(fetchDashboardStats());
+    dispatch(fetchHistory());
+  }, [dispatch]);
 
-const dispatch = useDispatch();
+  return (
+    <div className="dashboard-page">
+      <div className="dashboard-banner">
+        <div>
+          <h1>Welcome back, {displayName} 👋</h1>
+          <p>AI-powered Medical CRM Dashboard</p>
+        </div>
 
-useEffect(() => {
-dispatch(fetchDashboardStats());
-dispatch(fetchHistory());
-}, [dispatch]);
+        <div className="banner-right">
+          <div>
+            <h2>Active</h2>
+            <span>AI Workspace</span>
+          </div>
+        </div>
+      </div>
 
-return(
+      <StatsGrid />
 
-<div className="dashboard-page">
+      <div className="dashboard-row">
+        <div className="left">
+          <ChartsPanel />
+          <DoctorTable />
+          <ActivityFeed />
+        </div>
 
-<div className="dashboard-banner">
-
-<div>
-
-<h1>
-
-Welcome back, Sumit 👋
-
-</h1>
-
-<p>
-
-AI-powered Medical CRM Dashboard
-
-</p>
-
-</div>
-
-<div className="banner-right">
-
-<div>
-
-<h2>
-
-98%
-
-</h2>
-
-<span>
-
-AI Accuracy
-
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<StatsGrid/>
-
-<div className="dashboard-row">
-
-<div className="left">
-
-<ChartsPanel/>
-
-<DoctorTable/>
-
-<ActivityFeed/>
-
-</div>
-
-<div className="right">
-
-<InsightCard/>
-
-<QuickActions/>
-
-<PerformanceCard/>
-
-<FollowupWidget/>
-
-</div>
-
-</div>
-
-</div>
-
-);
-
+        <div className="right">
+          <InsightCard />
+          <QuickActions />
+          <PerformanceCard />
+          <FollowupWidget />
+        </div>
+      </div>
+    </div>
+  );
 }

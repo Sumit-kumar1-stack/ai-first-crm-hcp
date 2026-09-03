@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.db.database import get_db
 from app.auth.dependencies import get_current_user
+from app.models.user import User
 from app.schemas.agent import (
     AgentRequest,
     AgentResponse,
@@ -23,6 +24,7 @@ router = APIRouter(
 def chat(
     request: AgentRequest,
     db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
 ):
 
     state = {
@@ -37,6 +39,7 @@ def chat(
         "error": None,
         "extracted_data": None,
         "db": db,
+        "user_id": current_user.id,
     }
 
     try:
