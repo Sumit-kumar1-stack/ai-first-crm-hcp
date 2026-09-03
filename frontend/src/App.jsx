@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate,
@@ -25,7 +25,7 @@ const History = lazy(() => import("./components/history/HistoryPanel"));
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense
         fallback={
           <div
@@ -122,6 +122,6 @@ export default function App() {
         </Routes>
       </Suspense>
       <Toaster position="top-right" />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
