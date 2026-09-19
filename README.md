@@ -1,5 +1,8 @@
 # AI-First CRM HCP Module
 
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![LangGraph](https://img.shields.io/badge/LangGraph-AI%20Agents-1C3C3C) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00)
+
+
 An AI-powered Customer Relationship Management (CRM) system for Healthcare Professionals (HCPs) built as part of the Round 1 Technical Assignment.
 
 The application enables medical representatives to log interactions using either a structured form or a conversational AI assistant powered by **LangGraph** and an **LLM**.
